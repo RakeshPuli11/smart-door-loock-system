@@ -49,7 +49,7 @@ void loop()
   Serial.println();
   Serial.print("Message : ");
   content.toUpperCase();
-  if (content.substring(1) == "23 17 30 13") //change here the UID of the card/cards that you want to give access
+  if (content.substring(1) == "23 17 30 13" || content.substring(1) == "43 29 64 0D") //change here the UID of the card/cards that you want to give access
   {
     Serial.println("Authorized access");
     Serial.println();
@@ -67,26 +67,6 @@ void loop()
     digitalWrite(6,0);
     delay(1000);
     flag = 1;
-  }
-  else if(content.substring(1) == "43 29 64 0D")
-  {
-    Serial.println("Authorized access");
-    Serial.println();
-    //delay(3000);
-    digitalWrite(6,1);
-    delay(200);
-    digitalWrite(6,0);
-    delay(200);
-    digitalWrite(6,1);
-    delay(200);
-    digitalWrite(6,0);
-    delay(200);
-    digitalWrite(6,1);
-    delay(200);
-    digitalWrite(6,0);
-    delay(1000);
-    flag = 1;
-    
   }
   else 
   {
@@ -117,6 +97,4 @@ void loop()
       k--;
      }
   }
- 
- 
 } 
